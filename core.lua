@@ -12,40 +12,40 @@ local version        = "1.0.0"
 local AceTimer       = LibStub("AceTimer-3.0")
 if sb.debug then SB:Print("Parsing core.lua...") end
 
--- Load some relevant wow API and lua globals into the local namespace.
-local GetInviteConfirmationInfo = GetInviteConfirmationInfo
-local GetNextPendingInviteConfirmation = GetNextPendingInviteConfirmation
-local GetUnitName = GetUnitName
-local time = GetServerTime or time
-local GetPlayerInfoByGUID = GetPlayerInfoByGUID
-local GetRealmName = GetRealmName
-local IsInInstance = IsInInstance
-local IsInGroup = IsInGroup
-local IsInRaid = IsInRaid
-local PlaySoundFile = PlaySoundFile
-local GetNumGroupMembers = GetNumGroupMembers
+-- -- Load some relevant wow API and lua globals into the local namespace.
+-- local GetInviteConfirmationInfo = GetInviteConfirmationInfo
+-- local GetNextPendingInviteConfirmation = GetNextPendingInviteConfirmation
+-- local GetUnitName = GetUnitName
+-- local time = GetServerTime or time
+-- local GetPlayerInfoByGUID = GetPlayerInfoByGUID
+-- local GetRealmName = GetRealmName
+-- local IsInInstance = IsInInstance
+-- local IsInGroup = IsInGroup
+-- local IsInRaid = IsInRaid
+-- local PlaySoundFile = PlaySoundFile
+-- local GetNumGroupMembers = GetNumGroupMembers
 
-local UnitFactionGroup = UnitFactionGroup
-local UnitIsPlayer = UnitIsPlayer
-local UnitIsUnit = UnitIsUnit
-local UnitGUID = UnitGUID
-local UnitLevel = UnitLevel
-local GetGuildInfo = GetGuildInfo
-local SendChatMessage = SendChatMessage
+-- local UnitFactionGroup = UnitFactionGroup
+-- local UnitIsPlayer = UnitIsPlayer
+-- local UnitIsUnit = UnitIsUnit
+-- local UnitGUID = UnitGUID
+-- local UnitLevel = UnitLevel
+-- local GetGuildInfo = GetGuildInfo
+-- local SendChatMessage = SendChatMessage
 
-local pcall = pcall
+-- local pcall = pcall
 
 local LE_PARTY_CATEGORY_HOME = 1
 local RAID_CLASS_COLORS = RAID_CLASS_COLORS
 
-local ipairs = ipairs
-local next = next
-local pairs = pairs
-local print = print
-local select = select
-local string = string
-local type = type
-local tostring = tostring
+-- local ipairs = ipairs
+-- local next = next
+-- local pairs = pairs
+-- local print = print
+-- local select = select
+-- local string = string
+-- local type = type
+-- local tostring = tostring
 
 local function tab_dump(o)
   if type(o) == 'table' then
