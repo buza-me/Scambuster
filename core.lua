@@ -167,6 +167,14 @@ function SB:get_UDI()
   return self.db.global.udi
 end
 
+function SB:IsInGroup()
+  if self.db.profile.use_rdf_scan then
+    return IsInGroup()
+  end
+
+  return IsInGroup(LE_PARTY_CATEGORY_HOME)
+end
+
 --=========================================================================================
 -- The basic AceAddon structure
 --=========================================================================================
@@ -906,7 +914,7 @@ function SB:raise_alert()
 
   -- If the scan is broadcastable, figure out if it should be broadcast
   -- according to group status and config.
-  if self.scan_table[self.query.scan_context].can_broadcast and IsInGroup(LE_PARTY_CATEGORY_HOME)
+  if self.scan_table[self.query.scan_context].can_broadcast and self:IsInGroup()
       and conf.use_group_chat_alert then
     local channel = "PARTY"
     if IsInRaid() then
@@ -949,7 +957,7 @@ end
 function SB:OnRosterUpdate()
   local members = {}
 
-  if not IsInGroup(LE_PARTY_CATEGORY_HOME) then
+  if not self:IsInGroup() then
     return
   end
   -- Based on reading online, might need a short C_Timer in here if the unit info
@@ -1032,7 +1040,7 @@ function SB:PLAYER_ENTERING_WORLD()
 
   if self.first_enter_world then
     -- Only if in a home group, run the group scan callback.
-    if conf.scans.group.enabled and IsInGroup(LE_PARTY_CATEGORY_HOME) then
+    if conf.scans.group.enabled and self:IsInGroup() then
       self:GROUP_ROSTER_UPDATE()
     end
     self.first_enter_world = false

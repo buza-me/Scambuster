@@ -36,6 +36,7 @@ SB.defaults = {
 
     use_system_alert = true,
     use_group_chat_alert = false,
+    use_rdf_scan = true,
 
     print_descriptions_in_alerts = true,
     use_gui_alert = true, -- placeholder
@@ -491,6 +492,14 @@ local alerts_opts_group = {
       desc =
           "If enabled and in an instance group, Scambuster will broadcast a summary of the scammer's information to the" ..
           " group or raid channel. Will only happen for Group scans.",
+      get = "opts_getter",
+      set = "opts_setter",
+    },
+    use_rdf_scan = {
+      order = 2.3,
+      type = "toggle",
+      name = "Enable in RDF",
+      desc = "Enable in RDF",
       get = "opts_getter",
       set = "opts_setter",
     },
